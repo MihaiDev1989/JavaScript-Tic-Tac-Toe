@@ -69,14 +69,15 @@ function checkWin(curentCLass) {
         let cellA = optionChose[winningCombinationItems[0]];
         let cellB = optionChose[winningCombinationItems[1]];
         let cellC = optionChose[winningCombinationItems[2]];
-        if (cellA === curentCLass && cellB == curentCLass && cellC == curentCLass) {
+
+        if (!optionChose.includes("")) {
             if (curentCLass == "x") {
                 winningMessageTextElement.innerText = "X's Wins!!";
             } else {
                 winningMessageTextElement.innerText = "O's Wins!!";
             }
             winningMessageElement.classList.add("show");
-        } else if (!optionChose.includes("")) {
+        } else if (cellA === curentCLass && cellB === curentCLass && cellC === curentCLass) {
             winningMessageTextElement.innerText = "Draw!!";
             winningMessageElement.classList.add("show");
         } else {
